@@ -1,10 +1,24 @@
-# Application Screenshots & UI Guide
+# SmartAgri-AI
 
-This directory holds visual assets and screenshots demonstrating SmartAgri AI:
+AI-powered Android application for crop monitoring and intelligent agricultural decision support.
 
-1. `01_dashboard.png` - Home Dashboard with Quick Actions, Weather Widget, and Health Metrics.
-2. `02_scanner_camera.png` - CameraX Crop Scanner live viewfinder.
-3. `03_scan_result.png` - AI Diagnostic Health Report & Next Steps.
-4. `04_crop_management.png` - Crop inventory list & registration.
-5. `05_irrigation_advisor.png` - Water stress & irrigation calculator.
-6. `06_agri_assistant_urdu.png` - Urdu & English AI Chat Interface.
+## What is in this repository
+
+- `ml/train_crop_model.py` — TensorFlow/Keras training script (MobileNetV3Small transfer learning, 224×224 input, 12 classes, 15 epochs)
+- `ml/export_tflite.py` — export script for the on-device TFLite model
+- `docs/ARCHITECTURE.md` — system architecture
+- `docs/RESEARCH_CONTEXT.md` — research background
+- `screenshots/` — app UI screenshots
+
+## Companion app
+
+The offline Android prototype that runs the model on-device lives in the `plant_disease_research_app` repository (Flutter, MobileNetV3Large, fully offline inference).
+
+## Training
+
+```bash
+pip install tensorflow
+python ml/train_crop_model.py
+```
+
+Configure the dataset paths in the script before training.
